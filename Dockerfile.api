@@ -1,9 +1,14 @@
-FROM python:3.8-slim-bullseye
+# This Dockerfile builds the API only.
 
-WORKDIR /api
+FROM python:3.8-alpine
+WORKDIR /app
 
 COPY api/requirements.txt api/api.py api/.flaskenv ./
 RUN pip install -r ./requirements.txt
+ENV FLASK_ENV production
 
 EXPOSE 5000
-CMD ["python", "api.py"]
+CMD ["gunicorn", "-b", ":5000", "api:app"]
+
+#Enter this in command line, to build and run
+#docker build -f Dockerfile.api -t 848-v2-api . && docker run --rm -p 5000:5000 848-v2-api

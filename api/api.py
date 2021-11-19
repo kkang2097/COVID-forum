@@ -1,12 +1,20 @@
 import time
-import os
 from flask import Flask
+#Can run 'pythom -m flask run' to test the API
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../build', static_url_path='/')
 
-@app.route('/time')
+
+@app.errorhandler(404)
+def not_found(e):
+    return app.send_static_file('index.html')
+
+
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
+
+
+@app.route('/api/time')
 def get_current_time():
     return {'time': time.time()}
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=os.getenv('PORT'))

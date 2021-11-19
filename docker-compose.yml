@@ -1,0 +1,13 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: 848-v2-api
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    image: 848-v2-client
+    ports:
+      - "3000:80"
