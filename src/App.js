@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './Header';
+import Faq from './Faq';
 
 function App() {
+
+    const [faqs, setfaqs] = useState([
+      {
+        question: 'What are some of activites that can cause the spread of COVID-19?',
+        answer: 'Any activity that exposes yourself with other people can increase the chance of catching the virus.',
+        open: false
+      },
+      {
+        question: 'What are some of activites that can cause the spread of COVID-19?',
+        answer: 'Any activity that exposes yourself with other people can increase the chance of catching the virus.',
+        open: false
+      },
+      {
+        question: 'What are some of activites that can cause the spread of COVID-19?',
+        answer: 'Any activity that exposes yourself with other people can increase the chance of catching the virus.',
+        open: false
+      }
+    ]);
+
+    const toggleFaq = index => {
+      setfaqs(faqs.map((faq, i) => {
+        if (i === index) {
+          faq.open = !faq.open
+        } else {
+          faq.open = false;
+        }
+        return faq;
+      }))
+    }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <div className="faqs">
+        {faqs.map((faq, i) => (
+          <Faq faq={faq} index={i} toggleFaq= {toggleFaq} />
+        ))}
+      </div>
     </div>
   );
 }
 
-export default App;
+export default App
