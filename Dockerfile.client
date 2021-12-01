@@ -2,6 +2,7 @@
 FROM node:16-alpine as build-step
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
+
 COPY package.json yarn.lock ./
 COPY ./src ./src
 COPY ./public ./public
@@ -13,5 +14,18 @@ FROM nginx:stable-alpine
 COPY --from=build-step /app/build /usr/share/nginx/html
 COPY deployment/nginx.default.conf /etc/nginx/conf.d/default.conf
 
+
+
 #Command for Docker command line
 #docker build -f Dockerfile.client -t 848-v2-client .
+
+#To push onto Google Container Repository
+#Command: docker tag [SOURCE_IMAGE] gcr.io/[PROJECT_ID]/[IMAGE_NAME]
+#Add tag: docker tag 848-v2-client gcr.io/termproj-333004/848-v2-client
+
+#Command: docker push [SOURCE_IMAGE] gcr.io/[PROJECT_ID]/[IMAGE_NAME]
+#Push: docker push gcr.io/termproj-333004/848-v2-client
+
+#To push onto Docker Hub
+#Command: docker push [repository]:[tag]
+#Example: docker push kkang2097/test-repo:hello

@@ -23,5 +23,20 @@ WORKDIR /app/api
 CMD ["gunicorn","--timeout", "1000", "--workers=1", "-b", ":3000", "api:app"]
 
 
+
+
+
+
 #docker build -f Dockerfile.combo -t react-flask-app .
 #docker run --rm -p 3000:3000 react-flask-app
+#Combined: docker build -f Dockerfile.combo -t react-flask-app . && docker run --rm -p 3000:3000 react-flask-app
+
+#Command: docker tag [SOURCE_IMAGE] gcr.io/[PROJECT_ID]/[IMAGE_NAME]
+#Add tag: docker tag react-flask-app gcr.io/termproj-333004/react-flask-app
+
+#Command: docker push [SOURCE_IMAGE] gcr.io/[PROJECT_ID]/[IMAGE_NAME]
+#Push: docker push gcr.io/termproj-333004/react-flask-app
+
+#To push onto Docker Hub
+#Command: docker push [repository]:[tag]
+#Example: docker push kkang2097/test-repo:hello

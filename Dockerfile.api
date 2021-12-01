@@ -8,7 +8,21 @@ RUN pip install -r ./requirements.txt
 ENV FLASK_ENV production
 
 EXPOSE 5000
-CMD ["gunicorn", "-b", ":5000", "api:app"]
+#or gunicorn -b 5000 api:app
+CMD gunicorn -b 5000 api:app
 
 #Enter this in command line, to build and run
 #docker build -f Dockerfile.api -t 848-v2-api . && docker run --rm -p 5000:5000 848-v2-api
+
+
+#To push onto Google Container Repository
+
+#Command: docker tag [SOURCE_IMAGE] gcr.io/[PROJECT_ID]/[IMAGE_NAME]
+#Add tag: docker tag 848-v2-api gcr.io/termproj-333004/848-v2-api
+
+#Command: docker push [SOURCE_IMAGE] gcr.io/[PROJECT_ID]/[IMAGE_NAME]
+#Push: docker push gcr.io/termproj-333004/848-v2-api
+
+#To push onto Docker Hub
+#Command: docker push [repository]:[tag]
+#Example: docker push kkang2097/test-repo:hello
