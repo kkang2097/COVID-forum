@@ -1,0 +1,29 @@
+.card-carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-basis: auto;
+}
+
+.card {
+  margin: 1em;
+}
+
+.card img {
+  height: 25rem;
+  width: 20rem;
+  object-fit: cover;
+  object-position: top;
+}
+
+.prevCard {
+  opacity: 0;
+}
+
+/* .activeCard {
+  transform: translateX(50%);
+} */
+
+.nextCard {
+  opacity: 0;
+}

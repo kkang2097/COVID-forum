@@ -1,0 +1,12 @@
+.navbar {
+    padding: 2px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    background-color: orange;
+    font-size: 2em;
+}
+
+:link {
+    text-decoration: none;
+}
