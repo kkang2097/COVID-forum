@@ -7,9 +7,11 @@ COPY api/requirements.txt api/api.py api/.flaskenv ./
 RUN pip install -r ./requirements.txt
 ENV FLASK_ENV production
 
-EXPOSE 5000
+#or "EXPOSE $PORT"
+EXPOSE 80
+
 #or gunicorn -b 5000 api:app
-CMD gunicorn -b 5000 api:app
+CMD gunicorn -b :5000 api:app
 
 #Enter this in command line, to build and run
 #docker build -f Dockerfile.api -t 848-v2-api . && docker run --rm -p 5000:5000 848-v2-api
