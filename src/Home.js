@@ -3,6 +3,8 @@ import './css/home.css'
 import left from './images/left.png'
 import right from './images/right.png'
 
+//Home needs to check if you are logged in. If logged in, show carousel and
+//landing page information.
 export default function Home() {
     const fakeData = [
         { age: 19, gender: "m", location: 93123 },
