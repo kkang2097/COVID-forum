@@ -1,4 +1,4 @@
-const axios = require('./base-instance.js');
+const axios = require('./axios-help.js');
 
 
 //Functions here
@@ -15,5 +15,5 @@ module.exports = {
   }
 
 
-  
+
 }
