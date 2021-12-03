@@ -5,6 +5,10 @@ import Home from './Home';
 import Login from './Login';
 import Register from './Register';
 import Feed from './Feed';
+//
+//
+//Yo Kevin, put FAQ here//
+
 
 function App() {
   return (
