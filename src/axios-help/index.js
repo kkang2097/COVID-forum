@@ -1,7 +1,4 @@
-const axios = require('axios');
+const axios = require('./base-instance.js');
 
-const instance = axios.create({
-  baseURL: 'http://localhost:5090/'
-})
 
-export default instance;
+//Functions here
