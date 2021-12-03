@@ -25,6 +25,10 @@ def index():
 def get_current_time():
     return {'time': time.time()}
 
+@app.route('/api/12345')
+def get_number():
+    return 15
+
 #Author: Chris Humphrey
 @app.route("/auth", methods=['POST','GET'])
 def auth():
