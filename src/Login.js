@@ -1,24 +1,53 @@
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react'
-import { call } from './Call.js'
+import { Call } from './Call.js'
+import { useDataLayerValue } from "./DataLayer";
+
 
 
 export default function Login(props) {
+
+
+
     const history = useHistory();
     const [email, setEmail] = useState("login-email")
     const [password, setPassword] = useState("login-password")
 
+
+
+
+
+    // CHRISTOPHERS CODE
+    const [{  }, dispatch] = useDataLayerValue();
+
     const attemptLogin = (event) => {
         event.preventDefault();
-
-
-
-
-
-        // Christopher code:
+         
         var data = { "email": email, "password": password };
-        data = {"token": window.localStorage.getItem("Token")}
-        call("auth", data)
+        var json = Call("login", data)
+        .then((response => {
+
+            dispatch(response);
+            if (response.error == false) {
+                console.log("login successful")
+            }
+            else {
+                console.log(response.error)
+            }
+        }))
+        
+    // END CHRISTOPHER CODE
+
+
+  
+        
+
+  
+
+
+
+
+
 
         history.push("/");
     }
