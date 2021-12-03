@@ -6,6 +6,17 @@ import right from './images/right.png'
 //Home needs to check if you are logged in. If logged in, show carousel and
 //landing page information.
 export default function Home() {
+
+    //Activates right when your component loads
+    useEffect(
+      //Where you would add code for a function
+      () => {
+
+      },
+      //If anything changes here,
+      []);
+
+    //Data functions here
     const fakeData = [
         { age: 19, gender: "m", location: 93123 },
         { age: 29, gender: "m", location: 92222 },
