@@ -33,7 +33,7 @@ def get_number():
 @app.route("/auth", methods=['POST','GET'])
 def auth():
     if request.method == "POST":
-        token = request.json
+        token = request.json["token"]
         userData, token, error = authenticateUser.authenticateToken(token)
 
         if error == False:
@@ -140,3 +140,4 @@ def getChat():
         del userData.__dict__["password"];
         response = {"userData": userData.__dict__, "messages": messages, "token": token, "error": error}
         return response
+
