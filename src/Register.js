@@ -1,60 +1,64 @@
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react'
 
+import { Call } from './Call.js'
+import { useDataLayerValue } from "./DataLayer";
+
 export default function Register() {
     const history = useHistory();
     const [email, setEmail] = useState("reg-email")
+    const [name, setName] = useState("reg-name")
     const [password, setPassword] = useState("reg-password")
-    const [zip, setZip] = useState("reg-zip")
+    const [stateabbrv, setstateabbrv] = useState("reg-stateabbrv")
 
+
+    const [{  }, dispatch] = useDataLayerValue();
     const attemptRegister = (event) => {
         event.preventDefault();
-        // Connect to the backend to check if the data is valid
-        // let data = {};
-        // var x = fetch('http://127.0.0.1:5000/newAcct', {
-        //     method: 'POST',
-        //     headers: { "Content-Type": "application/json" },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(response => {
-        //         return response.json()
-        //     })
-        //     .then((json) => {
-        //         var token = json['Token'];
-        //         var error = json['Error'];
-        //         if (error != false) {
-        //             this.error2 = error
-        //             this.forceUpdate()
-        //         }
-        //         else {
-        //             window.localStorage.setItem("Token", token);
-        //             console.log(token)
-        //             // Move to next window
-        //         }
-        //     });
+         
+        var data = { "email": email, "password": password, "name": name, "state": stateabbrv, "emailUpdates": 1 };
+        var json = Call("newAcct", data)
+        .then((response => {
+            console.log(response)
+            dispatch(response);
+
+            if (response.error == false) {
+                console.log("create Acct successful")
+            }
+            else {
+                console.log(response.error)
+            }
+        }))
+        
         history.push("/");
     }
 
+    const changeName = (event) => {
+        setName(event.target.value)
+    }
     const changeEmail = (event) => {
         setEmail(event.target.value)
     }
     const changePassword = (event) => {
         setPassword(event.target.value)
     }
-    const changeZip = (event) => {
-        setZip(event.target.value)
+    const changestateabbrv = (event) => {
+        setstateabbrv(event.target.value)
     }
 
     return (
         <form>
+            <label>Name:</label>
+            <input type="text" name="name" onChange={changeName} />
+            <br />
             <label>Email:</label>
             <input type="text" name="email" onChange={changeEmail} />
             <br />
             <label>Password:</label>
             <input type="text" name="password" onChange={changePassword} />
             <br />
-            <label>Zip Code:</label>
-            <input type="text" name="zip" onChange={changeZip} />
+            <label>State Abbreviation (example: CA):</label>
+            <input type="text" name="stateabbrv" onChange={changestateabbrv} />
             <br />
             <input type="submit" value="REGISTER" onClick={attemptRegister} />
         </form>
