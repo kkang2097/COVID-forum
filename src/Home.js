@@ -44,6 +44,7 @@ export default function Home() {
 
     // authenticate to check if a user is logged in
     fetch('http://127.0.0.1:5000/auth', {
+        //Elliot: @Sunny I'll refactor this into an axios.get() later
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(window.localStorage.getItem("Token"))
