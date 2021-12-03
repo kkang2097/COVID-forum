@@ -1,5 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react'
+import { call } from './Call.js'
+
 
 export default function Login(props) {
     const history = useHistory();
@@ -15,45 +17,8 @@ export default function Login(props) {
 
         // Christopher code:
         var data = { "email": email, "password": password };
-        var x = fetch('http://127.0.0.1:5000/login', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        })
-            .then(response => {
-                return response.json()
-            })
-            .then((json) => {
-                console.log(json)
-
-                var error = json["error"]
-                var token = json["token"]
-
-                if ( error == false )
-                {
-                    // The user logged in successfully 
-
-                    window.localStorage.setItem("Token", token);
-
-                    // Lets get some user information
-                    var userData = json["userData"]
-                    var name = userData["name"]
-                    var numPersons = userData["numPersons"]
-                    var state = userData["state"]
-                    // There is lots more userdata to use, like risk score, etc
-
-                }
-                else 
-                {
-                    console.log(error)
-                    // The user did not login succesfully
-                    // So error contains a string like "password is not correct" or "connection issues to MongoDB"
-                   // Display the error to the user
-                }
-
-                // Then redirect to next page
-
-            });
+        data = {"token": window.localStorage.getItem("Token")}
+        call("auth", data)
 
         history.push("/");
     }
