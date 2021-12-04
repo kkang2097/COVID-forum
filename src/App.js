@@ -5,6 +5,7 @@ import Home from './Home';
 import Login from './Login';
 import Register from './Register';
 import Feed from './Feed';
+import AddPerson from './AddPerson'
 
 
 import { Call } from './Call.js'
@@ -13,17 +14,15 @@ import { useEffect } from "react";
 
 function App() {
 
-
-
-
-
   // LETS CHECK IF USER IS ALREADY LOGGED IN
   // CHRISTOPHERS CODE
-  const [{  isLoggedIn }, dispatch] = useDataLayerValue();
+  const [{  isLoggedIn, name, state, numPersons }, dispatch] = useDataLayerValue();
   useEffect(() => {
      
       if ( isLoggedIn) {
-        console.log("User Already Logged In!")
+        console.log("User Already Logged In via state")
+        // and name is name, state = state, etc is already saved!
+        // literally already covered!
       }
       else {
         
@@ -33,7 +32,7 @@ function App() {
 
                 dispatch(response);
                 if (response.error == false) {
-                    console.log("User Already Logged In!")
+                    console.log("User Already Logged In via token")
                 }
                 else {
                     console.log(response.error)
@@ -52,6 +51,7 @@ function App() {
       <Switch>
         <Route path="/login" component={Login}></Route>
         <Route path="/register" component={Register}></Route>
+        <Route path="/addperson" component={AddPerson}></Route>
         <Route path="/feed" component={Feed}></Route>
         {/* <Route path="/qa" component={}></Route> */}
         <Route path="/" component={Home}></Route>
