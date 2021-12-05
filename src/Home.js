@@ -7,15 +7,6 @@ import right from './images/right.png'
 //landing page information.
 export default function Home() {
 
-    //Activates right when your component loads
-    useEffect(
-      //Where you would add code for a function
-      () => {
-
-      },
-      //If anything changes here,
-      []);
-
     //Data functions here
     const fakeData = [
         { age: 19, gender: "m", location: 93123 },
@@ -42,37 +33,47 @@ export default function Home() {
         }
     };
 
-    // authenticate to check if a user is logged in
-    fetch('http://127.0.0.1:5000/auth', {
-        //Elliot: @Sunny I'll refactor this into an axios.get() later
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(window.localStorage.getItem("Token"))
-    })
-        .then(response => {
-            return response.json()
-        })
-        .then((json) => {
-            if (json['success'] == true) {
-                return (
-                    <div className="card-carousel">
-                        <img src={left} onMouseDown={slideLeft} />
-                        <div className="card">
-                            <h1>{fakeData[index]["age"]}</h1>
-                            <h2>{fakeData[index]["gender"]}</h2>
-                            <h3>{fakeData[index]["location"]}</h3>
-                        </div>
-                        <img src={right} onMouseDown={slideRight} />
-                    </div>
-                )
-            } else {
-                return (
-                    <div>No one is logged in. (Username/Password didn't match)</div>
-                )
-            }
-        })
+    // Sunny: @Elliot, Chris did a call for each page so we don't need fetch in the component
+    // but we still need to find a way to pass that variable into this component
+    // // authenticate to check if a user is logged in
+    // fetch('http://127.0.0.1:5000/auth', {
+    //     //Elliot: @Sunny I'll refactor this into an axios.get() later
+    //     method: 'POST',
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(window.localStorage.getItem("Token"))
+    // })
+    //     .then(response => {
+    //         return response.json()
+    //     })
+    //     .then((json) => {
+    //         if (json['success'] == true) {
+    //             return (
+    //                 <div className="card-carousel">
+    //                     <img src={left} onMouseDown={slideLeft} />
+    //                     <div className="card">
+    //                         <h1>{fakeData[index]["age"]}</h1>
+    //                         <h2>{fakeData[index]["gender"]}</h2>
+    //                         <h3>{fakeData[index]["location"]}</h3>
+    //                     </div>
+    //                     <img src={right} onMouseDown={slideRight} />
+    //                 </div>
+    //             )
+    //         } else {
+    //             return (
+    //                 <div>No one is logged in. (Username/Password didn't match)</div>
+    //             )
+    //         }
+    //     })
 
     return (
-        <div>auth() failed, 99% was because it did't run in api.py</div>
+        <div className="card-carousel">
+            <img src={left} onMouseDown={slideLeft} />
+            <div className="card">
+                <h1>{fakeData[index]["age"]}</h1>
+                <h2>{fakeData[index]["gender"]}</h2>
+                <h3>{fakeData[index]["location"]}</h3>
+            </div>
+            <img src={right} onMouseDown={slideRight} />
+        </div>
     )
 }
