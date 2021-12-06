@@ -77,11 +77,12 @@ def addPerson(user, name, age, sex, state, vaccine, race, smoker, heightFeet, he
     if user.person1 == None:
         user.person1 = newPerson.__dict__
     elif user.person2 == None:
-        user.person1 = newPerson.__dict__
-    elif user.person3 == None:
         user.person2 = newPerson.__dict__
+    elif user.person3 == None:
+        user.person3 = newPerson.__dict__
 
     user.numPersons += 1
+    print(user.__dict__)
     x = connectMongoDB.collection.update_one({"_id": user._id}, {"$set": user.__dict__})
 
     if x == None:
@@ -90,20 +91,27 @@ def addPerson(user, name, age, sex, state, vaccine, race, smoker, heightFeet, he
         return user, False
 
 def removePerson(user, personToRemove):
+
+    print(user._id)
+    print(personToRemove)
+
+    personToRemove = int(personToRemove)
     
     if personToRemove == 1:
-        user.person1 == None
         user.person1 = user.person2
         user.person2 = user.person3
+        user.person3 = None
     elif personToRemove == 2:
-        user.person2 == None
         user.person2 = user.person3
+        user.person3 = None
     elif personToRemove == 3:
-        user.person3 == None
+        user.person3 = None
 
     user.numPersons -= 1
 
     x = connectMongoDB.collection.update_one({"_id": user._id}, {"$set": user.__dict__})
+    print(user.__dict__)
+    print(x)
 
     if x == None:
         return user, "Error Removing Person from Database"

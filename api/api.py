@@ -96,7 +96,10 @@ def removePerson():
         data = request.json
         token = data["token"]
         personToRemove = data["personToRemove"]
+        print("works")
+        
         userData, token, error = authenticateUser.authenticateToken(token)
+        print(error)
 
         if error == False:
 
@@ -140,4 +143,6 @@ def getChat():
         del userData.__dict__["password"];
         response = {"userData": userData.__dict__, "messages": messages, "token": token, "error": error}
         return response
+
+app.run()
 
