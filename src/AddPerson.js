@@ -23,7 +23,7 @@ export default function Login(props) {
     
 
     // CHRISTOPHERS CODE
-    const [{  }, dispatch] = useDataLayerValue();
+    const [{ numPersons }, dispatch] = useDataLayerValue();
 
     const attemptLogin = (event) => {
         event.preventDefault();
@@ -78,6 +78,10 @@ export default function Login(props) {
         setMask(event.target.value)
     }
 
+    if (numPersons > 2){
+        return ( <div>already reached max number of people, which is 3 </div>)
+    }
+    else {
     return (
         <form>
             <label>Persons Name:</label>
@@ -112,5 +116,6 @@ export default function Login(props) {
             <br />
             <input type="submit" value="Add Person" onClick={attemptLogin} />
         </form>
-    )
+    
+    ) }
 }

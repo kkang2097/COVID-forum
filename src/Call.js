@@ -18,6 +18,8 @@ export  function Call(path, data) {
             })
             .then((json) => {
 
+                    console.log(json)
+
                     var person1Name = null
                     var person1RiskScore = null
                     var person2Name = null
@@ -40,13 +42,13 @@ export  function Call(path, data) {
                         }
          
                     if (json["userData"]["person2"]) {
-                         person2RiskScore= json["userData"]["person1"]["riskScore"]
-                         person2Name= json["userData"]["person1"]["name"]
+                         person2RiskScore= json["userData"]["person2"]["riskScore"]
+                         person2Name= json["userData"]["person2"]["name"]
                         }
                     
                     if (json["userData"]["person3"]) {
-                         person3RiskScore= json["userData"]["person1"]["riskScore"]
-                         person3Name= json["userData"]["person1"]["name"]
+                         person3RiskScore= json["userData"]["person3"]["riskScore"]
+                         person3Name= json["userData"]["person3"]["name"]
                         }
                     
 
