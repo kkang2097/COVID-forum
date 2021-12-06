@@ -41,7 +41,7 @@ export default function Login(props) {
         
     // END CHRISTOPHER CODE
 
-        history.push("/");
+        history.push("/riskscores");
     }
 
     const changeEmail = (event) => {

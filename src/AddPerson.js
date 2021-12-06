@@ -35,6 +35,7 @@ export default function Login(props) {
             dispatch(response);
             if (response.error == false) {
                 console.log("add person successful")
+                history.push("/riskscores");
             }
             else {
                 console.log(response.error)
@@ -109,7 +110,7 @@ export default function Login(props) {
             <label>Mask Wearing (0, 1 ,2)</label>
             <input type="text" name="password" onChange={changemask} />
             <br />
-            <input type="submit" value="LOGIN" onClick={attemptLogin} />
+            <input type="submit" value="Add Person" onClick={attemptLogin} />
         </form>
     )
 }

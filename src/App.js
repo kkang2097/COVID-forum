@@ -7,6 +7,7 @@ import Register from './Register';
 import Feed from './Feed';
 import AddPerson from './AddPerson'
 import './css/App.css'
+import SeeRiskScore from './SeeRiskScore'
 
 
 import { Call } from './Call.js'
@@ -59,6 +60,7 @@ function App() {
         <Route path="/register" component={Register}></Route>
         <Route path="/addperson" component={AddPerson}></Route>
         <Route path="/feed" component={Feed}></Route>
+        <Route path="/riskscores" component={SeeRiskScore}></Route>
         {/* <Route path="/qa" component={}></Route> */}
         <Route path="/" component={Home}></Route>
       </Switch>

@@ -28,6 +28,8 @@ export default function Navbar() {
                 <Link to="/">HOME</Link>
                 <Link to="/qa">Q & A</Link>
                 <Link to="/feed">Feed</Link>
+                <Link to="/addperson">AddPerson</Link>
+                <Link to="/riskscores">See Risk Score</Link>
                 <Link to='/'  onClick={attemptLogout}>LOGOUT</Link>
             </div>
         )
