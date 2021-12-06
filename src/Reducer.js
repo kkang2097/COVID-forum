@@ -1,3 +1,8 @@
+// PLEASE DO NOT TOUCH
+// PLEASE DO NOT TOUCH
+// PLEASE DO NOT TOUCH
+// PLEASE DO NOT TOUCH
+
 export const initialState = {
     isLoggedIn: false,
     name: null,

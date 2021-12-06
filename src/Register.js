@@ -47,20 +47,39 @@ export default function Register() {
     }
 
     return (
-        <form>
-            <label>Name:</label>
-            <input type="text" name="name" onChange={changeName} />
-            <br />
-            <label>Email:</label>
-            <input type="text" name="email" onChange={changeEmail} />
-            <br />
-            <label>Password:</label>
-            <input type="text" name="password" onChange={changePassword} />
-            <br />
-            <label>State Abbreviation (example: CA):</label>
-            <input type="text" name="stateabbrv" onChange={changestateabbrv} />
-            <br />
-            <input type="submit" value="REGISTER" onClick={attemptRegister} />
-        </form>
+        
+
+        <div class="center">
+      <h1>Live Laugh Love ;)</h1>
+      <form method="post">
+        <div class="txt_field">
+        <input type="text" name="name" onChange={changeName} />
+          <span></span>
+          <label>First Name</label>
+        </div>
+        <div class="txt_field">
+        <input type="email" name="password" onChange={changeEmail} />
+          <span></span>
+          <label>Email</label>
+        </div>
+        <div class="txt_field">
+        <input type="password" name="password" onChange={changePassword} />
+          <span></span>
+          <label>Password</label>
+        </div>
+        <div class="txt_field">
+        <input type="text" name="password" onChange={changestateabbrv} />
+          <span></span>
+          <label>State CA TX (make this a dropdown menu)</label>
+        </div>
+        <input type="submit" value="Create Account" onClick={attemptRegister} />
+        &nbsp;
+      </form>
+    </div>
+
+
+
+
+
     )
 }

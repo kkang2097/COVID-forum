@@ -2,6 +2,8 @@ import { useHistory } from 'react-router-dom';
 import { useState } from 'react'
 import { Call } from './Call.js'
 import { useDataLayerValue } from "./DataLayer";
+import './css/App.css'
+
 
 
 
@@ -24,6 +26,7 @@ export default function Login(props) {
         event.preventDefault();
          
         var data = { "email": email, "password": password };
+        console.log(data)
         var json = Call("login", data)
         .then((response => {
 
@@ -38,17 +41,6 @@ export default function Login(props) {
         
     // END CHRISTOPHER CODE
 
-
-  
-        
-
-  
-
-
-
-
-
-
         history.push("/");
     }
 
@@ -60,17 +52,41 @@ export default function Login(props) {
     }
 
     return (
-        <form>
-            <label>Email:</label>
-            <input type="text" name="name" onChange={changeEmail} />
-            <br />
-            <label>Password:</label>
-            <input type="text" name="password" onChange={changePassword} />
-            <br />
-            <input type="submit" value="LOGIN" onClick={attemptLogin} />
-            <input type="submit" value="REGISTER" onClick={() => {
-                history.push("/register");
-            }} />
-        </form>
+
+
+
+
+
+
+
+
+
+<div class="center">
+      <h1>Login</h1>
+      Use the following:
+      &nbsp;
+      chris@humphrey.com 
+      &nbsp;
+      12345678
+      <form method="post">
+        <div class="txt_field">
+        <input type="text" name="name" onChange={changeEmail} />
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+        <input type="text" name="password" onChange={changePassword} />
+          <span></span>
+          <label>Password</label>
+        </div>
+        <input type="submit" value="LOGIN" onClick={attemptLogin} />
+        <div class="signup_link">
+          Not a member? <a href="register">Signup</a>
+        </div>
+      </form>
+    </div>
+
     )
 }
+
+

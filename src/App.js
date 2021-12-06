@@ -6,6 +6,7 @@ import Login from './Login';
 import Register from './Register';
 import Feed from './Feed';
 import AddPerson from './AddPerson'
+import './css/App.css'
 
 
 import { Call } from './Call.js'
@@ -16,6 +17,9 @@ function App() {
 
   // LETS CHECK IF USER IS ALREADY LOGGED IN
   // CHRISTOPHERS CODE
+  // PLEASE DO NOT TOUCH
+  // PLEASE DO NOT TOUCH
+
   const [{  isLoggedIn, name, state, numPersons }, dispatch] = useDataLayerValue();
   useEffect(() => {
      
@@ -45,9 +49,11 @@ function App() {
  
   return (
 
+  
 
     <div>
       <Navbar />
+      <div className="App">
       <Switch>
         <Route path="/login" component={Login}></Route>
         <Route path="/register" component={Register}></Route>
@@ -57,6 +63,8 @@ function App() {
         <Route path="/" component={Home}></Route>
       </Switch>
     </div>
+    </div>
+
 
   );
 }
