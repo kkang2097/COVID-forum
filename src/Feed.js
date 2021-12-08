@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import FeedCard from './FeedCard';
-import './elliot/feed.css';
+import './css/feed-luke.css';
 
 function Feed() {
   //Data for feed
