@@ -1,21 +1,28 @@
 import React from 'react';
-import './elliot/feed.css';
+import './css/feed-luke.css';
 
-function Card(item){
+function Card(item) {
 
 
   function buttonClick() {
     console.log(item["item"]["age"]);
   }
 
-  return(
-    <div className = "Card">CARD
-    <p className = "text-line">
-    {item["item"]["age"]}, {item["item"]["gender"]}, {item["item"]["location"]}
-    </p>
-    <p className = "text-line">
-    {item["item"]["body"]}
-    </p>
+  return (
+    <div className="Card">
+      <span className="title">CARD</span>
+      {/* front */}
+      <div className="waper">
+        <p className="text-line">
+          {/* added a span to adjust front size */}
+          <span className="text">{item["item"]["age"]}</span>
+          <span className="text">{item["item"]["gender"]}</span>
+          <span className="text">{item["item"]["location"]}</span> 
+        </p>
+        <p className="text-line">
+          {item["item"]["body"]}
+        </p>
+      </div>
     </div>
   );
 }
