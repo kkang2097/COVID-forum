@@ -57,6 +57,20 @@ header h1 {
   transition: all 0.4s ease;
 }
 
+.faqs .faq .faq-question::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+
+  background-image: url('./images/arrow-down.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 .faqs .faq .faq-answer {
   opacity: 0;
   max-height: 0;

@@ -8,6 +8,7 @@ import Feed from './Feed';
 import AddPerson from './AddPerson'
 import './css/App.css'
 import SeeRiskScore from './SeeRiskScore'
+import FAQS from './FAQS'
 
 
 import { Call } from './Call.js'
@@ -21,31 +22,31 @@ function App() {
   // PLEASE DO NOT TOUCH
   // PLEASE DO NOT TOUCH
 
-  const [{  isLoggedIn, name, state, numPersons }, dispatch] = useDataLayerValue();
-  useEffect(() => {
+  // const [{  isLoggedIn, name, state, numPersons }, dispatch] = useDataLayerValue();
+  // useEffect(() => {
      
-      if ( isLoggedIn) {
-        console.log("User Already Logged In via state")
-        // and name is name, state = state, etc is already saved!
-        // literally already covered!
-      }
-      else {
+  //     if ( isLoggedIn) {
+  //       console.log("User Already Logged In via state")
+  //       // and name is name, state = state, etc is already saved!
+  //       // literally already covered!
+  //     }
+  //     else {
         
-            var data = {"token": window.localStorage.getItem("Token")}
-            var json = Call("auth", data)
-            .then((response => {
+  //           var data = {"token": window.localStorage.getItem("Token")}
+  //           var json = Call("auth", data)
+  //           .then((response => {
 
-                dispatch(response);
-                if (response.error == false) {
-                    console.log("User Already Logged In via token")
-                }
-                else {
-                    console.log(response.error)
-                }
-            }))
-          }
-          }, [isLoggedIn, dispatch]);
-  // END CHRISTOPHERS CODE
+  //               dispatch(response);
+  //               if (response.error == false) {
+  //                   console.log("User Already Logged In via token")
+  //               }
+  //               else {
+  //                   console.log(response.error)
+  //               }
+  //           }))
+  //         }
+  //         }, [isLoggedIn, dispatch]);
+  // // END CHRISTOPHERS CODE
 
  
   return (
@@ -61,7 +62,7 @@ function App() {
         <Route path="/addperson" component={AddPerson}></Route>
         <Route path="/feed" component={Feed}></Route>
         <Route path="/riskscores" component={SeeRiskScore}></Route>
-        {/* <Route path="/qa" component={}></Route> */}
+        <Route path="/qa" component={FAQS}></Route>
         <Route path="/" component={Home}></Route>
       </Switch>
     </div>

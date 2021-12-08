@@ -1,4 +1,5 @@
 import React from 'react'
+import FAQS from './FAQS.css'
 
 function Faq({faq, index, toggleFaq}) {
     return (
