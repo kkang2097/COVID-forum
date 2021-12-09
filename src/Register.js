@@ -3,6 +3,8 @@ import { useState } from 'react'
 
 import { Call } from './Call.js'
 import { useDataLayerValue } from "./DataLayer";
+import './css/login.css';
+import facemask from './images/maskwear_background.jpg';
 
 export default function Register() {
     const history = useHistory();
@@ -50,8 +52,15 @@ export default function Register() {
         
 
         <div class="center">
-      <h1>Live Laugh Love ;)</h1>
-      <form method="post">
+      {/* <h1>Live Laugh Love ;)</h1> */}
+      <body>
+      <img src={facemask} alt="facemask background" width={1904} height={1000}>
+        </img>
+      <form className="Signupform" method="post">
+        <h1>Signup for free!</h1>
+        <br></br>
+        <br></br>
+        <br></br>
         <div class="txt_field">
         <input type="text" name="name" onChange={changeName} />
           <span></span>
@@ -69,12 +78,14 @@ export default function Register() {
         </div>
         <div class="txt_field">
         <input type="text" name="password" onChange={changestateabbrv} />
+        
           <span></span>
           <label>State CA TX (make this a dropdown menu)</label>
         </div>
         <input type="submit" value="Create Account" onClick={attemptRegister} />
         &nbsp;
       </form>
+      </body>
     </div>
 
 

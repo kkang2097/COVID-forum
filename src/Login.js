@@ -2,7 +2,8 @@ import { useHistory } from 'react-router-dom';
 import { useState } from 'react'
 import { Call } from './Call.js'
 import { useDataLayerValue } from "./DataLayer";
-import './css/App.css'
+import './css/login.css'
+import facemask from './images/maskwear_background.jpg';
 
 
 
@@ -55,20 +56,27 @@ export default function Login(props) {
 
 
 
-
-
-
-
-
-
 <div class="center">
-      <h1>Login</h1>
-      Use the following:
+      {/* Use the following:
       &nbsp;
       chris@humphrey.com 
       &nbsp;
-      12345678
-      <form method="post">
+      12345678 */}
+      <title>Login Design</title>
+      <link rel="stylesheet" type="src/css" href="App.css"></link>
+      <body>
+        <img src={facemask} alt="facemask background" width={1904} height={1000}>
+        </img>
+        
+          
+          
+      <form className="Loginform" method="post">
+        <div>
+        <h1>Login Here</h1>
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
         <div class="txt_field">
         <input type="text" name="name" onChange={changeEmail} />
           <span></span>
@@ -79,11 +87,15 @@ export default function Login(props) {
           <span></span>
           <label>Password</label>
         </div>
-        <input type="submit" value="LOGIN" onClick={attemptLogin} />
+        <input type="submit" value="Login" onClick={attemptLogin} />
+        <br></br>
+        <br></br>
         <div class="signup_link">
           Not a member? <a href="register">Signup</a>
         </div>
       </form>
+      
+      </body>
     </div>
 
     )

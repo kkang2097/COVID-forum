@@ -1,0 +1,69 @@
+.center {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    
+  }
+  
+  
+  .submit {
+    padding-top: 16px;
+  }
+  
+  
+  .loginbox {
+    width: 320px;
+    height: 420px;
+    background: white;
+    color: black;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+  }
+  
+  .body {
+    margin: 0;
+    padding: 0;
+  }
+  .Loginform {
+    position: absolute;
+    width: 320px;
+    height: 420px;
+    background: white;
+    color: black;
+    top: 20%;
+    left: 41%;
+    position: absolute;
+    box-sizing: border-box;
+
+  }
+
+.facemask {
+   max-width: 100%;
+   height: auto;
+   width: auto;
+   padding: 15px;
+   object-fit: cover;
+   background-size: cover;
+   padding-left: 1rem;
+
+}
+
+.Signupform {
+  position: absolute;
+    width: 320px;
+    height: 420px;
+    background: white;
+    color: black;
+    top: 20%;
+    left: 41%;
+    position: absolute;
+    box-sizing: border-box;
+}
+

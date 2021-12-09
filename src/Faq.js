@@ -1,8 +1,9 @@
 import React from 'react'
-import FAQS from './FAQS.css'
+import FAQS from './css/FAQS.css'
 
 function Faq({faq, index, toggleFaq}) {
     return (
+        
         <div 
             className={"faq " + (faq.open ? 'open' : '')}
             key={index}
@@ -16,6 +17,7 @@ function Faq({faq, index, toggleFaq}) {
                 {faq.answer}
             </div>
         </div>
+        
     )
 }
 
