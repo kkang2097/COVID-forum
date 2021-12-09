@@ -33,6 +33,8 @@ useEffect(() => {
     console.log(error);
   }
 
+  //setData(mongoDB data) here
+
   //Our infinite scrolling event listener
   window.addEventListener('scroll', handleScroll);
   return () => window.removeEventListener('scroll', handleScroll);

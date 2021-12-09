@@ -97,7 +97,7 @@ def removePerson():
         token = data["token"]
         personToRemove = data["personToRemove"]
         print("works")
-        
+
         userData, token, error = authenticateUser.authenticateToken(token)
         print(error)
 
@@ -119,6 +119,9 @@ def addChat():
         userData, token, error = authenticateUser.authenticateToken(token)
 
         if error == False:
+            #Elliot: I think it should be name, location instead.
+            #California is a big state, the user wants to know what's going on
+            #in their city. 
             name = userData["name"]
             state = userData["state"]
             error = chat.addMessage(name, state, message)
@@ -145,4 +148,3 @@ def getChat():
         return response
 
 app.run()
-
