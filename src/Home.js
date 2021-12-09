@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import './css/home.css'
-import logo from './images/logo.png'
+import { useState } from 'react';
+import './css/home.css';
+import logo from './images/logo.png';
+import HomeBackground from './images/HomePage_background.png';
 
 
 //Home needs to check if you are logged in. If logged in, show carousel and
@@ -34,7 +35,11 @@ export default function Home() {
 
 
     return (
+        <body>
         <div className="content">
+        {/* <img src={HomeBackground} alt="Homepage Background" width={1904} height={1000}>
+            </img> */}
+
             <img className="logo" src={logo} />
             <br />
             <div className="card-carousel">
@@ -47,5 +52,6 @@ export default function Home() {
                 <div className="arrow right" onClick={slideRight}></div>
             </div>
         </div >
+        </body>
     )
 }

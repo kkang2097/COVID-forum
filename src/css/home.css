@@ -23,10 +23,15 @@
 .logo {
   width: 30em;
   animation: jello-horizontal 3s infinite;
+  
 }
 
 .logo:hover {
   animation: wobble-hor-bottom 2s infinite;
+  background-image: url('../images/firework_gif.gif');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .arrow {
@@ -53,6 +58,15 @@
   box-shadow: 16px -16px 0 white;
 }
 
+
+.HomeBackground {
+   max-width: 100%;
+   height: auto;
+   width: auto;
+   padding: 15px;
+   object-fit: cover;
+   background-size: cover;
+}
 
 @keyframes jello-horizontal {
   0% {
