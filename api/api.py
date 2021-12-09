@@ -62,6 +62,7 @@ def newAcct():
     if request.method == "POST":
 
         newAcctInfo = request.json
+        #We need the city as part of location too
         userData, token, error = addUser.addUser(newAcctInfo["email"], newAcctInfo["password"], \
             newAcctInfo["name"], newAcctInfo["state"], newAcctInfo["emailUpdates"])
 
@@ -80,6 +81,7 @@ def addPerson():
         userData, token, error = authenticateUser.authenticateToken(token)
 
         if error == False:
+            #City needed here as well
             userData, error = addUser.addPerson(userData, newPersonInfo['name'], newPersonInfo['age'], \
                     newPersonInfo['sex'], newPersonInfo['state'], newPersonInfo['vaccine'], newPersonInfo['race'], \
                     newPersonInfo['smoker'], newPersonInfo['heightFeet'], newPersonInfo['heightInches'], newPersonInfo['heartLung'], newPersonInfo['mask'] )
@@ -121,7 +123,7 @@ def addChat():
         if error == False:
             #Elliot: I think it should be name, location instead.
             #California is a big state, the user wants to know what's going on
-            #in their city. 
+            #in their city.
             name = userData["name"]
             state = userData["state"]
             error = chat.addMessage(name, state, message)
