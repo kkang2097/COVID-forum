@@ -1,7 +1,8 @@
 import React from 'react';
 
-function FeedAddStatus() {
+function FeedAddStatus(updateStatus) {
 
+  //On component initial load
   useEffect(
     () => {
       //Code Here
@@ -10,7 +11,13 @@ function FeedAddStatus() {
   ,[]);
 
   return(
-
+    <div className = "add-feed-status">
+      <select name = "dropdown">
+        <option value = "Location" selected>Computer Architecture</option>
+        <option value = "Status">Java</option>
+      </select>
+      <input type = "text" placeholder = "Search..."/>
+    </div>
 
   );
 }

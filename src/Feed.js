@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import FeedCard from './FeedCard';
+import FeedAddStatus from './FeedAddStatus';
 import './css/feed-luke.css';
 
 function Feed() {
@@ -43,6 +44,8 @@ useEffect(() => {
 //Rendering portion
   return(
     <div className = "Feed">
+      <a>FEED-ADD-STATUS</a>
+        <FeedAddStatus updateStatus = {//update-status function}/>
       <a>FEED</a>
       {
         data.map(
