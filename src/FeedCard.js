@@ -10,14 +10,14 @@ function Card(item) {
 
   return (
     <div className="Card">
-      <span className="title">CARD</span>
+      <span className="title"></span>
       {/* front */}
       <div className="waper">
         <p className="text-line">
           {/* added a span to adjust front size */}
           <span className="text">{item["item"]["age"]}</span>
           <span className="text">{item["item"]["gender"]}</span>
-          <span className="text">{item["item"]["location"]}</span> 
+          <span className="text">{item["item"]["location"]}</span>
         </p>
         <p className="text-line">
           {item["item"]["body"]}

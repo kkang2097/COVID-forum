@@ -15,8 +15,8 @@ function FeedAddStatus(updateStatus) {
   return(
     <div className = "add-feed-status">
       <select name = "dropdown">
-        <option value = "Location" selected>Computer Architecture</option>
-        <option value = "Status">Java</option>
+        <option value = "location" selected>Location</option>
+        <option value = "status">Status</option>
       </select>
       <input type = "text" placeholder = "Search..."/>
     </div>

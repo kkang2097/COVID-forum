@@ -25,9 +25,9 @@ useEffect(() => {
       {age: 99, gender: "m", location: "dallas, texas", body: "not feeling good"},
       {age: 99, gender: "m", location: "dallas, texas", body: "not feeling good"},
       {age: 99, gender: "m", location: "dallas, texas", body: "not feeling good"},
+      {age: 99, gender: "m", location: "dallas, texas", body: " feeling good"},
       {age: 99, gender: "m", location: "dallas, texas", body: "not feeling good"},
-      {age: 99, gender: "m", location: "dallas, texas", body: "not feeling good"},
-      {age: 99, gender: "m", location: "dallas, texas", body: "not feeling good"}
+      {age: 99, gender: "m", location: "dallas, texas", body: " feeling good"}
     ]);
   }
   catch(error){
