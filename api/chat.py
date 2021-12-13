@@ -6,6 +6,7 @@ import passwordHash
 import jwt
 import requests
 import pymongo
+import datetime
 
 cluster = pymongo.MongoClient("mongodb+srv://chris:12345@cluster0.6zsms.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = cluster["test"]
@@ -15,8 +16,10 @@ collection = db["statuses"]
 def addMessage(name, state, message):
     today = datetime.today()
     date = today.strftime("%d/%m/%Y")
-    
-    x = collection.insert_one({"name": name}, {"state": state}, {"date": date}, {"message": message})
+    #Elliot: adding time also
+    time = datetime.datetime.utcnow()
+
+    x = collection.insert_one({"name": name}, {"state": state}, {"date": date}, {"time": time}, {"message": message})
 
     if x == None:
         return "Error Adding Status"
@@ -24,7 +27,8 @@ def addMessage(name, state, message):
         return False
 
 def getMessages():
-    x = collection.find()
+    #Find "newest to oldest" documents, limit 10 maximum retrieved
+    x = collection.find().sort({"x":-1}).limit(10)
     if x == None:
         return None, "Error Getting Status"
     else:
