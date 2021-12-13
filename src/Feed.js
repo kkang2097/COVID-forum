@@ -45,7 +45,7 @@ useEffect(() => {
   return(
     <div className = "Feed">
       <a>FEED-ADD-STATUS</a>
-        <FeedAddStatus updateStatus = {//update-status function}/>
+        <FeedAddStatus updateStatus = {"hello"} />
       <a>FEED</a>
       {
         data.map(
