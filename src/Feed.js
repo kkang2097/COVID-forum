@@ -6,6 +6,7 @@ import './css/feed-luke.css';
 function Feed() {
   //Data for feed
   var [data, setData] = useState([]);
+  var [currentFeed, setCurrentFeed] = useState([]);
   //Current index inside MongoDB feed collection
   const [index, setIndex] = useState(0);
 
@@ -20,7 +21,6 @@ function handleScroll() {
 function handleSearch(type, query){
 
   //Async function to get search results from mongoDB
-  
 
 }
 
@@ -36,6 +36,16 @@ useEffect(() => {
       {age: 99, gender: "m", location: "dallas, texas", body: "not feeling good"},
       {age: 99, gender: "m", location: "dallas, texas", body: " feeling good"}
     ]);
+    setCurrentFeed([
+      {age: 99, gender: "m", location: "dallas, texas", body: "not feeling good"},
+      {age: 99, gender: "m", location: "dallas, texas", body: "not feeling good"},
+      {age: 99, gender: "m", location: "dallas, texas", body: "not feeling good"},
+      {age: 99, gender: "m", location: "dallas, texas", body: "not feeling good"},
+      {age: 99, gender: "m", location: "dallas, texas", body: " feeling good"},
+      {age: 99, gender: "m", location: "dallas, texas", body: "not feeling good"},
+      {age: 99, gender: "m", location: "dallas, texas", body: " feeling good"}
+    ]);
+
   }
   catch(error){
     console.log(error);
@@ -55,12 +65,9 @@ useEffect(() => {
         <FeedAddStatus updateStatus = {"hello"} handleSearch = {handleSearch} />
       <a>FEED</a>
       {
-        data.map(
-        item => <
-        FeedCard item = {item}
-        />
-      )
-
+        //Show current Feed
+        currentFeed
+        .map(item => <FeedCard item = {item}/>)
     }
     </div>
   );

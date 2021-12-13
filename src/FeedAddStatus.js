@@ -17,7 +17,7 @@ function FeedAddStatus(updateStatus, handleSearch) {
   return(
     <div className = "add-feed-status">
       <select name = "dropdown" id = "filterType">
-        <option value = "location" selected>Location</option>
+        <option value = "location" selected>Location (By Name)</option>
         <option value = "status">Status</option>
       </select>
       <input type = "text" id = "query" placeholder = "Search..."/>
