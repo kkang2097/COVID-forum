@@ -17,6 +17,13 @@ function handleScroll() {
   //setData(data + [newdata]);
 }
 
+function handleSearch(type, query){
+
+  //Async function to get search results from mongoDB
+  
+
+}
+
 useEffect(() => {
   //We would set the data to whatever our initial data load would be
   try{
@@ -45,7 +52,7 @@ useEffect(() => {
   return(
     <div className = "Feed">
       <a>FEED-ADD-STATUS</a>
-        <FeedAddStatus updateStatus = {"hello"} />
+        <FeedAddStatus updateStatus = {"hello"} handleSearch = {handleSearch} />
       <a>FEED</a>
       {
         data.map(

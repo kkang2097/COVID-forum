@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FeedAddStatus(updateStatus) {
+function FeedAddStatus(updateStatus, handleSearch) {
 
   //On component initial load
   /*
@@ -12,13 +12,19 @@ function FeedAddStatus(updateStatus) {
   ,[]);
   */
 
+
+
   return(
     <div className = "add-feed-status">
-      <select name = "dropdown">
+      <select name = "dropdown" id = "filterType">
         <option value = "location" selected>Location</option>
         <option value = "status">Status</option>
       </select>
-      <input type = "text" placeholder = "Search..."/>
+      <input type = "text" id = "query" placeholder = "Search..."/>
+      <button onClick = {e => {handleSearch(
+        document.getElementById("filterType"),
+        document.getElementById("query")
+      )} }>Search</button>
     </div>
 
   );
