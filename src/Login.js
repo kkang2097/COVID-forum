@@ -42,7 +42,7 @@ export default function Login(props) {
         
     // END CHRISTOPHER CODE
 
-        history.push("/riskscores");
+        history.push("/coviddashboard");
     }
 
     const changeEmail = (event) => {
@@ -78,14 +78,16 @@ export default function Login(props) {
         <br></br>
         <br></br>
         <div class="txt_field">
-        <input type="text" name="name" onChange={changeEmail} />
+          <p>Username</p>
+        <input type="text" name="Name" onChange={changeEmail} />
           <span></span>
-          <label>Username</label>
+          
         </div>
         <div class="txt_field">
-        <input type="text" name="password" onChange={changePassword} />
+          <p>Password</p>
+        <input type="password" name="Password" onChange={changePassword} />
           <span></span>
-          <label>Password</label>
+          
         </div>
         <input type="submit" value="Login" onClick={attemptLogin} />
         <br></br>

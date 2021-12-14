@@ -12,8 +12,6 @@ function FeedAddStatus(updateStatus, handleSearch) {
   ,[]);
   */
 
-
-
   return(
     <div className = "add-feed-status">
       <select name = "dropdown" id = "filterType">
@@ -29,8 +27,5 @@ function FeedAddStatus(updateStatus, handleSearch) {
 
   );
 }
-
-
-
 
 export default FeedAddStatus;

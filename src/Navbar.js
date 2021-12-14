@@ -25,13 +25,12 @@ export default function Navbar() {
 
     if (isLoggedIn == true) {
         return (
-            <nav className="navbar">
-                <Link to="/">HOME</Link>
-                <Link to="/qa">Q & A</Link>
+            <nav className="nav-bar">
+                <Link to="/">Hello {name}</Link>
                 <Link to="/feed">Feed</Link>
-                <Link to="/addperson">AddPerson</Link>
-                <Link to="/riskscores">See Risk Score</Link>
+                <Link to="/coviddashboard">Risk Calculator</Link>
                 <Link to='/' onClick={attemptLogout}>LOGOUT</Link>
+                
             </nav>
         )
     }
@@ -40,7 +39,6 @@ export default function Navbar() {
             <nav className="nav-bar">
                 <Link to="/">HOME</Link>
                 <Link to="/qa">Q & A</Link>
-                <Link to="/feed">Feed</Link>
                 <Link to="/login">LOGIN</Link>
             </nav>
         )

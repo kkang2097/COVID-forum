@@ -5,7 +5,7 @@ import { useDataLayerValue } from "./DataLayer";
 
 
 
-export default function Login(props) {
+export default function AddingPerson(props) {
 
     const history = useHistory();
     const [name, setName] = useState("name")
@@ -27,15 +27,18 @@ export default function Login(props) {
 
     const attemptLogin = (event) => {
         event.preventDefault();
+
+        
          
         var data = { "token": token, "name": name, "age": age, "sex": sex, "state": stateavvrb, "vaccine": vaccine, "race": race, "smoker": smoke, "heightFeet": heightFeet, "heightInches": heightInches, "heartLung": heartLung, "mask": mask };
+        console.log(data)
         var json = Call("addPerson", data)
         .then((response => {
 
             dispatch(response);
             if (response.error == false) {
                 console.log("add person successful")
-                history.push("/riskscores");
+                history.push("/coviddashboard");
             }
             else {
                 console.log(response.error)
@@ -44,7 +47,7 @@ export default function Login(props) {
         
     // END CHRISTOPHER CODE
 
-        history.push("/");
+        history.push("/coviddashboard");
     }
 
     const changeName = (event) => {
@@ -79,40 +82,79 @@ export default function Login(props) {
     }
 
     if (numPersons > 2){
-        return ( <div>already reached max number of people, which is 3 </div>)
+        return null
     }
     else {
     return (
-        <form>
-            <label>Persons Name:</label>
-            <input type="text" name="name" onChange={changeName} />
+        <form className="addPersonForm" method="post">
+
+
+            <p>Persons Name</p>
+            <input type="text" name="Name" onChange={changeName} />
             <br />
-            <label>Age:</label>
-            <input type="text" name="name" onChange={changeAge} />
+            <span></span>
+
+
+            <p>Age</p>
+            <input type="text" name="Age" onChange={changeAge} />
             <br />
-            <label>State Abbreviation:</label>
-            <input type="text" name="name" onChange={changestateavvrb} />
+
+
+            <p>State Abbreviation (CA TX)</p>
+            <input type="text" name="State" onChange={changestateavvrb} />
             <br />
-            <label>Vaccines (0,1,2):</label>
-            <input type="text" name="name" onChange={changevaccine} />
+
+            <p>Height in Feet</p>
+            <input type="text" name="HF" onChange={changeheightfeet} />
             <br />
-            <label>Race (1,2,3,4):</label>
-            <input type="text" name="name" onChange={changeRace} />
+
+
+            <p>Height Inches</p>
+            <input type="text" name="HI" onChange={changeheightin} />
             <br />
-            <label>Smoker (0, 1):</label>
-            <input type="text" name="name" onChange={changesmoke} />
+
+            <select name="Vaccine" id="Vaccine" onChange={changevaccine} >
+            <option value="2">Fully Vaxxed</option>
+            <option value="1">Initial Dose</option>
+            <option value="0">No Vax</option>
+            </select>
             <br />
-            <label>Height Feet:</label>
-            <input type="text" name="name" onChange={changeheightfeet} />
+
+
+            <select name="Race" id="Race" onChange={changeRace} >
+            <option value="1">White</option>
+            <option value="0">Black</option>
+            <option value="2">Latino</option>
+            <option value="3">Native American</option>
+            <option value="4">Asian</option>
+            </select>
             <br />
-            <label>Height Inch:</label>
-            <input type="text" name="password" onChange={changeheightin} />
+            
+            <select name="Smoke" id="Smoke" onChange={changesmoke} >
+            <option value="0">Not A Smoker</option>  
+            <option value="1">Smoker</option>
+            </select>          
             <br />
-            <label>Heart or Lung Disease (0 or 1):</label>
-            <input type="text" name="password" onChange={changeheart} />
+
+
+ 
+
+
+            <select name="Smoke" id="Smoke" onChange={changeheart} >
+            <option value="0">Not Heart/Lung Disease</option>  
+            <option value="1">Diagnosed Heart/Lung Disease</option>
+            </select>          
+            <br />            
+
+            <select name="Mask" id="Mask" onChange={changemask} >
+            <option value="1">Never Wear Mask</option>  
+            <option value="2">Rarely Wear Mask</option>
+            <option value="3">Sometimes Wear Mask</option>
+            <option value="4">Usually Wear Mask</option>
+            <option value="5">Always Wear Mask</option>
+            </select>          
             <br />
-            <label>Mask Wearing (0, 1 ,2)</label>
-            <input type="text" name="password" onChange={changemask} />
+
             <br />
             <input type="submit" value="Add Person" onClick={attemptLogin} />
         </form>

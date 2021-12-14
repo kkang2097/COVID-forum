@@ -9,6 +9,7 @@ import AddPerson from './AddPerson'
 import './css/App.css'
 import SeeRiskScore from './SeeRiskScore'
 import FAQS from './FAQS'
+import CovidDashboard from './CovidDashboard';
 
 
 import { Call } from './Call.js'
@@ -52,11 +53,11 @@ function App() {
   return (
 
   
-
     <div>
       <Navbar />
       <div className="App">
       <Switch>
+        <Route path="/coviddashboard" component={CovidDashboard}></Route>
         <Route path="/login" component={Login}></Route>
         <Route path="/register" component={Register}></Route>
         <Route path="/addperson" component={AddPerson}></Route>

@@ -12,13 +12,15 @@ export default function Register() {
     const [name, setName] = useState("reg-name")
     const [password, setPassword] = useState("reg-password")
     const [stateabbrv, setstateabbrv] = useState("reg-stateabbrv")
+    const [emailUpdates, setEmailUpdates] = useState("0")
 
 
     const [{  }, dispatch] = useDataLayerValue();
     const attemptRegister = (event) => {
         event.preventDefault();
          
-        var data = { "email": email, "password": password, "name": name, "state": stateabbrv, "emailUpdates": 1 };
+        var data = { "email": email, "password": password, "name": name, "state": stateabbrv, "emailUpdates": emailUpdates };
+        console.log(data)
         var json = Call("newAcct", data)
         .then((response => {
             console.log(response)
@@ -26,13 +28,14 @@ export default function Register() {
 
             if (response.error == false) {
                 console.log("create Acct successful")
+                history.push("/coviddashboard");
             }
             else {
                 console.log(response.error)
+                history.push("/register");
             }
         }))
         
-        history.push("/");
     }
 
     const changeName = (event) => {
@@ -48,6 +51,10 @@ export default function Register() {
         setstateabbrv(event.target.value)
     }
 
+    const changeEmailUpdates = (event) => {
+      setEmailUpdates(event.target.value)
+  }
+
     return (
         
 
@@ -62,27 +69,37 @@ export default function Register() {
         <br></br>
         <br></br>
         <div class="txt_field">
-        <input type="text" name="name" onChange={changeName} />
+          <p>First Name</p>
+        <input type="text" name="Name" onChange={changeName} />
           <span></span>
-          <label>First Name</label>
+          
         </div>
         <div class="txt_field">
-        <input type="email" name="password" onChange={changeEmail} />
+        <p>Email</p>
+        <input type="email" name="Email" onChange={changeEmail} />
           <span></span>
-          <label>Email</label>
+          
         </div>
         <div class="txt_field">
-        <input type="password" name="password" onChange={changePassword} />
+          <p>Password</p>
+        <input type="password" name="Password" onChange={changePassword} />
           <span></span>
-          <label>Password</label>
+          
         </div>
         <div class="txt_field">
-        <input type="text" name="password" onChange={changestateabbrv} />
+        <p>State (example: CA TX)</p>
+
+        <input type="text" name="State" onChange={changestateabbrv} />
         
           <span></span>
-          <label>State CA TX (make this a dropdown menu)</label>
         </div>
+        <div >
+        <p>Recieve Email Updates on Your Local Covid Situation</p>
+        <input type="checkbox" id="Recieve Email Updates" name="Recieve Email Updates" value="1" onChange={changeEmailUpdates}/>
+        </div>
+        <div>
         <input type="submit" value="Create Account" onClick={attemptRegister} />
+        </div>
         &nbsp;
       </form>
       </body>
