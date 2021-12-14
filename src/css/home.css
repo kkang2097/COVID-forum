@@ -14,21 +14,21 @@
   flex-basis: auto;
 }
 
+.logo {
+  width: 30em;
+  animation: jello-horizontal 3s infinite;
+  
+}
+
 .home-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   object-fit: cover;
   background-size: cover;
-  background-image: url("../images/HomePage_background.png");
-  
+  background-image: url("../images/Home_background.png");
 }
 
-.logo {
-  width: 30em;
-  animation: jello-horizontal 3s infinite;
-  
-}
 
 .logo:hover {
   animation: wobble-hor-bottom 2s infinite;

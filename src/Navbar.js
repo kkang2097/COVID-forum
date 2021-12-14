@@ -27,10 +27,10 @@ export default function Navbar() {
         return (
             <nav className="nav-bar">
                 <Link to="/">Hello {name}</Link>
+                <Link to="/qa">Q & A</Link>
                 <Link to="/feed">Feed</Link>
                 <Link to="/coviddashboard">Risk Calculator</Link>
                 <Link to='/' onClick={attemptLogout}>LOGOUT</Link>
-                <Link to="/qa">Q & A</Link>
                 
             </nav>
         )
