@@ -46,7 +46,7 @@ function FAQS() {
 
   return (
     <div className="App">
-      <Header/>
+      {Header("FAQ")}
       <div className="faqs">
         {faqs.map((faq, i) => (
           <Faq faq={faq} index={i} toggleFaq= {toggleFaq} />

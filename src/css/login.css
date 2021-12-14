@@ -1,88 +1,42 @@
-.center {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 400px;
-    padding-left: 0px;
-    padding-right: 0px;
-    text-align: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    
-  }
-  
-  
-  .submit {
-    padding-top: 16px;
-  }
-  
-  
-  .loginbox {
-    width: 320px;
-    height: 420px;
-    background: white;
-    color: black;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-  }
-  
-  .body {
-    margin: 0;
-    padding: 0;
-  }
-  .Loginform {
-    position: absolute;
-    width: 320px;
-    height: 420px;
-    background: white;
-    color: black;
-    top: 20%;
-    left: 41%;
-    position: absolute;
-    box-sizing: border-box;
-
-  }
-
-.facemask {
-   max-width: 100%;
-   height: auto;
-   width: auto;
-   padding: 15px;
-   object-fit: cover;
-   background-size: cover;
-   padding-left: 1rem;
-
+.acct-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: contain;
+  background-image: url("../images/maskwear_background.jpg");
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
 }
 
-.Signupform {
-  position: absolute;
-    width: 320px;
-    height: 420px;
-    background: white;
-    color: black;
-    top: 20%;
-    left: 41%;
-    position: absolute;
-    box-sizing: border-box;
+.basic-form {
+  background-color: rgba(211, 99, 0, 0.7);
+  margin: auto;
+  padding: 3em;
+  color: rgb(175, 255, 144);
+  font-size: 2em;
+}
+
+.basic-form input {
+  font-size: 1.5em;
 }
 
 .displayscores {
-  display:inline-block;
+  display: inline-block;
   box-sizing: border-box;
   width: 320px;
   margin-left: 10px;
   margin-right: 10px;
   position: relative;
-  text-align: center; 
-  
+  text-align: center;
+
   background: white;
 }
 
 
 .addPersonForm {
   position: relative;
-  text-align: center; 
+  text-align: center;
   width: 320px;
   height: 420px;
   background: white;
@@ -95,10 +49,4 @@
 
 .row {
   display: inline-block;
-}
-
-.backg-image {
-  background: url(../images/maskwear_background.jpg);
-  height: 100vh;
-
 }

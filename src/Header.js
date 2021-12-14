@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Header() {
+function Header(name) {
     return (
         <header>
-            <h1>FAQ Page</h1>
+            <h1>{name} Page</h1>
         </header>
     )
 }

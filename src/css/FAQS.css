@@ -20,21 +20,6 @@ code {
     monospace;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding: 15px;
-  background-color:rgb(44, 42, 40);
-}
-
-header h1 {
-  color:aliceblue;
-  font-size: 28px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
 .faqs {
   width: 100%;
   max-width: 768px;
