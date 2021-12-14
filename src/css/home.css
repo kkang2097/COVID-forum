@@ -21,6 +21,7 @@
   object-fit: cover;
   background-size: cover;
   background-image: url("../images/HomePage_background.png");
+  
 }
 
 .logo {
@@ -31,11 +32,43 @@
 
 .logo:hover {
   animation: wobble-hor-bottom 2s infinite;
-  background-image: url('../images/firework_gif.gif');
+  background-image: url('../images/snowflakes.gif');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.AboutTitle {
+  width:100%;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: lightsalmon;
+}
+
+
+.AboutUs {
+  text-align: center;
+  width: 100%;
+}
+
+
+.FeedTitle {
+  float: left;
+  width: 40%;
+}
+
+ .RiskAbout {
+  float: right;
+  width: 40%;
+  
+}
+
+.Link {
+float: middle;
+}
+
 
 .arrow {
   top: 50%;
@@ -59,6 +92,16 @@
 .arrow:hover {
   border-color: orange;
   box-shadow: 16px -16px 0 white;
+}
+
+
+.HomeBackground {
+   max-width: 100%;
+   height: auto;
+   width: auto;
+   padding: 15px;
+   object-fit: cover;
+   background-size: cover;
 }
 
 @keyframes jello-horizontal {
@@ -92,6 +135,7 @@
 }
 
 @keyframes wobble-hor-bottom {
+
   0%,
   100% {
     transform: translateX(0%);
