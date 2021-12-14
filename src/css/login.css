@@ -67,3 +67,38 @@
     box-sizing: border-box;
 }
 
+.displayscores {
+  display:inline-block;
+  box-sizing: border-box;
+  width: 320px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+  text-align: center; 
+  
+  background: white;
+}
+
+
+.addPersonForm {
+  position: relative;
+  text-align: center; 
+  width: 320px;
+  height: 420px;
+  background: white;
+  color: black;
+  top: 0%;
+  left: 40%;
+  box-sizing: border-box;
+
+}
+
+.row {
+  display: inline-block;
+}
+
+.backg-image {
+  background: url(../images/maskwear_background.jpg);
+  height: 100vh;
+
+}

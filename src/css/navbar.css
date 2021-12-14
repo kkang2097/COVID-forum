@@ -2,7 +2,7 @@
     display: flex;
     text-align: center;
     justify-content: space-around;
-    background-color: orange;
+    background-color: rgba(254, 110, 58, 0.831);
     font-size: 2em;
     padding: 0.3em;
 }
