@@ -9,6 +9,12 @@ import addUser
 import userClasses
 import chat
 
+import requests
+import pymongo
+from bson.json_util import dumps
+
+
+
 #Can run 'pythom -m flask run' to test the API
 
 app = Flask(__name__, static_folder='../build', static_url_path='/')
@@ -28,6 +34,16 @@ def get_current_time():
 @app.route('/api/12345')
 def get_number():
     return 15
+
+@app.route("/getstatedata", methods=['POST','GET'])
+def getstatedata():
+    cluster = pymongo.MongoClient("mongodb+srv://chris:12345@cluster0.6zsms.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    db = cluster["test"]
+    collection = db["state"]
+
+    y = dumps(collection.aggregate([ { "$sample": { "size": 10 } } ]))
+
+    return y
 
 #Author: Chris Humphrey
 @app.route("/auth", methods=['POST','GET'])
