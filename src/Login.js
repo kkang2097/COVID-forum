@@ -59,21 +59,17 @@ export default function Login(props) {
       {Header("Login")}
       <form className="basic-form" method="post">
         <div className="txt_field">
-          <p>Username</p>
+          <label>Username</label>
           <input type="text" name="Name" onChange={changeEmail} />
-          <span></span>
         </div>
         <div className="txt_field">
-          <p>Password</p>
+          <label>Password</label>
           <input type="password" name="Password" onChange={changePassword} />
-          <span></span>
         </div>
-        <br></br>
-        <input type="submit" value="Login" onClick={attemptLogin} />
-        <br></br>
-        <br></br>
+        <input type="submit" value="Sign In" className="submit-button" onClick={attemptLogin} />
+        <br />
         <div>
-          Not a member? <a href="register">Signup</a>
+          Not a member? <a href="register">Sign Up Here!</a>
         </div>
       </form>
     </div >
