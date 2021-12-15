@@ -4,14 +4,12 @@
   align-items: center;
   background-size: contain;
   background-image: url("../images/maskwear_background.jpg");
-  position: fixed;
-  min-width: 100%;
-  min-height: 100%;
 }
 
 .basic-form {
   background-color: rgba(211, 99, 0, 0.7);
   margin: auto;
+  margin-bottom: 3em;
   padding: 3em;
   color: rgb(175, 255, 144);
   font-size: 2em;
