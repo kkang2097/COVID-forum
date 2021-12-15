@@ -1,30 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 function Header() {
-
-
-
-//Rendering portion
-  return(
-    <div className= "Header">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">bob</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">not disabled</a>
-      </li>
-    </ul>
-    </div>
-
-  );
+    return (
+        <header>
+            <h1>FAQ Page</h1>
+        </header>
+    )
 }
 
-
-export default Header;
+export default Header

@@ -5,6 +5,7 @@ from flask_cors import CORS
 import authenticateUser
 import addUser
 import userClasses
+import chat
 
 
 # if check_if_current_data() == False:
@@ -98,7 +99,41 @@ def removePerson():
         del userData.__dict__["password"];
         response = {"userData": userData.__dict__, "token": token, "error": error}
         return response
-  
+
+@app.route("/addChat", methods=['POST','GET'])
+def addChat():
+    if request.method == "POST":
+        data = request.json
+        token = data["token"]
+        message = data["message"]
+        userData, token, error = authenticateUser.authenticateToken(token)
+
+        if error == False:
+            name = userData["name"]
+            state = userData["state"]
+            error = chat.addMessage(name, state, message)
+
+        del userData.__dict__["_id"];
+        del userData.__dict__["password"];
+        response = {"userData": userData.__dict__, "token": token, "error": error}
+        return response
+
+@app.route("/getChat", methods=['POST','GET'])
+def getChat():
+
+     if request.method == "POST":
+        data = request.json
+        token = data["token"]
+        userData, token, error = authenticateUser.authenticateToken(token)
+
+        if error == False:
+            messages, error = chat.getMessages()
+
+        del userData.__dict__["_id"];
+        del userData.__dict__["password"];
+        response = {"userData": userData.__dict__, "messages": messages, "token": token, "error": error}
+        return response
+
 if __name__ == "__main__":
 
     app.debug = True
