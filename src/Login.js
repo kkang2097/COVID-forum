@@ -66,15 +66,7 @@ export default function Login(props) {
           <label>Password</label>
           <input type="password" name="Password" onChange={changePassword} />
         </div>
-        <input type="submit" value="Sign In" className="submit-button"
-        onClick={e=> {
-          if(email=="login-email" || password=="login-password"){
-            console.log("No valid login/password provided");
-          }
-         else{
-           attemptLogin;
-         }
-        } />
+        <input type="submit" value="Sign In" className="submit-button" onClick={attemptLogin} />
         <br />
         <div>
           Not a member? <a href="register">Sign Up Here!</a>
