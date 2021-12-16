@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import FeedCard from './FeedCard';
 import FeedAddStatus from './FeedAddStatus';
+import FeedSearch from './FeedSearch';
+import Call from './Call';
 import './css/feed-luke.css';
 
 function Feed() {
@@ -61,8 +63,10 @@ useEffect(() => {
 //Rendering portion
   return(
     <div className = "Feed">
-      <a>FEED-ADD-STATUS</a>
-        <FeedAddStatus updateStatus = {"hello"} handleSearch = {handleSearch} />
+      <a>ADD-STATUS</a>
+      <FeedAddStatus />
+      <a>FEED-SEARCH</a>
+        <FeedSearch updateStatus = {"hello"} handleSearch = {handleSearch} />
       <a>FEED</a>
       {
         //Show current Feed

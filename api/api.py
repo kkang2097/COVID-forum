@@ -134,6 +134,8 @@ def addChat():
         data = request.json
         token = data["token"]
         message = data["message"]
+        city = data["city"]
+
         userData, token, error = authenticateUser.authenticateToken(token)
 
         if error == False:

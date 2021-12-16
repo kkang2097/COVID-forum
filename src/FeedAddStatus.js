@@ -1,6 +1,7 @@
 import React from 'react';
+import Call from './Call';
 
-function FeedAddStatus(updateStatus, handleSearch) {
+function FeedAddStatus() {
 
   //On component initial load
   /*
@@ -11,18 +12,38 @@ function FeedAddStatus(updateStatus, handleSearch) {
     }
   ,[]);
   */
+  function handleAddStatus(){
+    const message = document.getElementById("message");
+    const city = document.getElementById("city");
+    const state = document.getElementById("state");
+
+    data = {
+      "message": message,
+      "city": city,
+      "state": state
+    };
+    Call("addChat", data)
+    .then((response => {
+        dispatch(response);
+        if (response.error == false) {
+            console.log("ADDED STATUS UPDATE");
+        }
+        else {
+            console.log(response.error);
+        }
+    }));
+  }
 
   return(
     <div className = "add-feed-status">
-      <select name = "dropdown" id = "filterType">
-        <option value = "location" selected>Location (By Name)</option>
-        <option value = "status">Status</option>
-      </select>
-      <input type = "text" id = "query" placeholder = "Search..."/>
-      <button onClick = {e => {handleSearch(
-        document.getElementById("filterType"),
-        document.getElementById("query")
-      )} }>Search</button>
+      <input type = "text" id = "message"
+      placeholder = "If you have COVID-19, share your experience!"/>
+
+      <input type="text" id="city" placeholder="City (Name)"/>
+      <input type="text" id="state" placeholder="State (Name)"/>
+      <button onClick = {e => {
+        handleAddStatus()
+      } }>Add Status</button>
     </div>
 
   );
