@@ -21,10 +21,11 @@ function handleScroll() {
 }
 
 function handleSearch(type, query){
-
   //Async function to get search results from mongoDB
 
 }
+
+
 
 useEffect(() => {
   //We would set the data to whatever our initial data load would be
@@ -62,6 +63,7 @@ useEffect(() => {
 
 //Rendering portion
   return(
+<<<<<<< Updated upstream
     <div className = "HEAD">
       <header>
         <h1>ADD-STATUS</h1>
@@ -73,6 +75,12 @@ useEffect(() => {
         <h1>FEED-SEARCH</h1>
       </header>
       <header>
+=======
+    <div className = "Feed">
+      <a>ADD-STATUS</a>
+      <FeedAddStatus/>
+      <a>FEED-SEARCH</a>
+>>>>>>> Stashed changes
         <FeedSearch updateStatus = {"hello"} handleSearch = {handleSearch} />
       </header>
       <span className='Feed'></span>
