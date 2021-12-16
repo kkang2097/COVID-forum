@@ -19,7 +19,7 @@ function FeedSearch(updateStatus, handleSearch) {
         <option value = "status">Status</option>
       </select>
       <input type = "text" id = "query" placeholder = "Search..."/>
-      <button onClick = {e => {handleSearch(
+      <button class='search2' onClick = {e => {handleSearch(
         document.getElementById("filterType"),
         document.getElementById("query")
       )} }>Search</button>
