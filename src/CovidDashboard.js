@@ -13,7 +13,7 @@ export default function CovidDashboard(props) {
 
 
       <div>
-      <body className="backg-image">
+      <body className="acct-content">
         
         {/* <link rel="stylesheet" type="src/css" href="App.css"></link>
         <body>

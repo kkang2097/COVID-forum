@@ -59,37 +59,86 @@ export default function Register() {
     <div className="acct-content" >
       {Header("Register")}
       <form className="basic-form" method="post">
-        <div class="txt_field">
-          <p>First Name</p>
+        <div className="txt_field">
+          <label>First Name</label>
           <input type="text" name="Name" onChange={changeName} />
-          <span></span>
         </div>
 
-        <div class="txt_field">
-          <p>Email</p>
+        <div className="txt_field">
+          <label>Email</label>
           <input type="email" name="Email" onChange={changeEmail} />
-          <span></span>
         </div>
 
-        <div class="txt_field">
-          <p>Password</p>
+        <div className="txt_field">
+          <label>Password</label>
           <input type="password" name="Password" onChange={changePassword} />
-          <span></span>
         </div>
 
-        <div class="txt_field">
-          <p>State (example: CA TX)</p>
-          <input type="text" name="State" onChange={changestateabbrv} />
-          <span></span>
+        <div className="txt_field">
+          <label>State</label>
+          <select onChange={changestateabbrv}>
+            <option disabled selected value> -- select -- </option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select>
         </div>
-
+        <br />
         <div >
-          <p>Recieve Email Updates on Your Local Covid Situation</p>
+          <label>Recieve Email Updates on Your Local Covid Situation</label>
           <input type="checkbox" id="Recieve Email Updates" name="Recieve Email Updates" value="1" onChange={changeEmailUpdates} />
         </div>
-
+        <br />
         <div>
-          <input type="submit" value="Create Account" onClick={attemptRegister} />
+          <input type="submit" value="Create Account" className="submit-button" onClick={attemptRegister} />
         </div>
       </form>
     </div>

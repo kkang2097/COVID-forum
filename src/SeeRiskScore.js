@@ -29,100 +29,113 @@ export default function SeeRiskScore(props) {
 
 
     const attemptDelete = (removethisdude) => {
-    var data = { "token": window.localStorage.getItem("Token"), "personToRemove": removethisdude };
-    console.log(data)
+        var data = { "token": window.localStorage.getItem("Token"), "personToRemove": removethisdude };
+        console.log(data)
         console.log(data)
         var json = Call("removePerson", data)
-        .then((response => {
+            .then((response => {
 
-            dispatch(response);
-            if (response.error == false) {
-                console.log(response)
-                console.log("deleted person successfully")
-                           }
-            else {
-                console.log(response.error)
-            }
-            
-        }))
+                dispatch(response);
+                if (response.error == false) {
+                    console.log(response)
+                    console.log("deleted person successfully")
+                }
+                else {
+                    console.log(response.error)
+                }
 
-        history.push("/")
+            }))
+
+        history.push("/coviddashboard")
     }
 
     console.log("num" + numPersons)
     const getPersons = () => {
         if (numPersons == 3) {
-        return (<div className="displayscores">
-
-            <h2>Based on current case data by state, and demographic data, we have concluded that:</h2>
-            &nbsp;
-
-            <div><h2>{person1Name} has a risk score of {person1RiskScore}</h2></div>
-            <span></span>
-            <input type="button" value="Delete Person" onClick={deletePerson1Func} />
-            &nbsp;
-            <div><h2>{person2Name} has a risk score of {person2RiskScore}</h2></div>
-            <input type="button" value="Delete Person" onClick={deletePerson2Func} />
-            &nbsp;
-            <div><h2>{person3Name} has a risk score of {person3RiskScore}</h2></div>
-            <input type="button" value="Delete Person" onClick={deletePerson3Func} />
-
-            &nbsp;
-            <p>*Max of 3 people allowed</p>
-
-            </div>)}
+            return (
+                <div className="basic-form">
+                    <p>*Max of 3 people allowed</p>
+                    <br />
+                    <br />
+                    <h2>Based on current case data by state, and demographic data, we have concluded that:</h2>
+                    <br />
+                    <br />
+                    <div>
+                        <h2>{person1Name} has a risk score of {person1RiskScore}</h2>
+                        <input type="button" value="Delete Person" className="submit-button" onClick={deletePerson1Func} />
+                    </div>
+                    <br />
+                    <br />
+                    <div>
+                        <h2>{person2Name} has a risk score of {person2RiskScore}</h2>
+                        <input type="button" value="Delete Person" className="submit-button" onClick={deletePerson2Func} />
+                    </div>
+                    <br />
+                    <br />
+                    <div>
+                        <h2>{person3Name} has a risk score of {person3RiskScore}</h2>
+                        <input type="button" value="Delete Person" className="submit-button" onClick={deletePerson3Func} />
+                    </div>
+                </div>)
+        }
         if (numPersons == 2) {
-            return (<div className="displayscores">
-
-<h2>Based on current case data by state, and demographic data, we have concluded that:</h2>
-&nbsp;
-
-                <div><h2>{person1Name} has a risk score of {person1RiskScore}</h2></div>
-                <span></span>
-                <input type="button" value="Delete Person" onClick={deletePerson1Func} />
-                &nbsp;
-
-                <div><h2>{person2Name} has a risk score of {person2RiskScore}</h2></div>
-                <input type="button" value="Delete Person" onClick={deletePerson2Func} />
-
-
-                </div>)}
+            return (
+                <div className="basic-form">
+                    <h2>Based on current case data by state, and demographic data, we have concluded that:</h2>
+                    <br />
+                    <br />
+                    <div>
+                        <h2>{person1Name} has a risk score of {person1RiskScore}</h2>
+                        <input type="button" value="Delete Person" className="submit-button" onClick={deletePerson1Func} />
+                    </div>
+                    <br />
+                    <br />
+                    <div>
+                        <h2>{person2Name} has a risk score of {person2RiskScore}</h2>
+                        <input type="button" value="Delete Person" className="submit-button" onClick={deletePerson2Func} />
+                    </div>
+                </div>)
+        }
         if (numPersons == 1) {
-            return (<div className="displayscores">
-
-<h2>Based on current case data by state, and demographic data, we have concluded that:</h2>
-&nbsp;
-
-                <div><h2>{person1Name} has a risk score of {person1RiskScore}</h2></div>
-                <input type="button" value="Delete Person" onClick={deletePerson1Func} />
-
-                <span></span>
-                </div>)}
+            return (
+                <div className="basic-form">
+                    <h2>Based on current case data by state, and demographic data, we have concluded that:</h2>
+                    <br />
+                    <br />
+                    <div>
+                        <h2>{person1Name} has a risk score of {person1RiskScore}</h2>
+                        <input type="button" value="Delete Person" className="submit-button" onClick={deletePerson1Func} />
+                    </div>
+                </div>)
+        }
         else {
-            return (<div className="displayscores"> <center><h2>Add a Person to See a Risk Score</h2></center>
-                </div>)}
-        
-        
+            return (
+                <div className="basic-form">
+                    <h2>Add a Person to See a Risk Score</h2>
+                </div>)
         }
 
 
-        return (
-            <div>
+    }
+
+
+    return (
+        <div>
             {getPersons()}
             <form method="post">
 
-            {/* <input type="text" name="delete" onChange={deletePersonFunc} />
+                {/* <input type="text" name="delete" onChange={deletePersonFunc} />
             <input type="submit" value="delete" onClick={attemptDelete} /> */}
             </form>
-            </div>)
-    
-
-
-    
+        </div>)
 
 
 
 
 
-    
+
+
+
+
+
 }

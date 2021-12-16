@@ -6,6 +6,7 @@
   background-image: url("../images/maskwear_background.jpg");
 }
 
+
 .basic-form {
   display: flex;
   flex-direction: column;
@@ -15,6 +16,11 @@
   color: black;
   background: rgba(255, 183, 75, 0.8);
   border-radius: 10px;
+}
+
+.basic-form p {
+  font-size: 2em;
+  color: orangered;
 }
 
 .basic-form h1 {
@@ -27,9 +33,9 @@
 
 .txt_field input {
   width: 100%;
-  padding: 10px 0;
+  padding-top: 0.3em;
   font-size: 2em;
-  margin-bottom: 30px;
+  margin-bottom: 1em;
   border: none;
   border-bottom: 4px solid white;
   outline: none;
@@ -47,6 +53,10 @@
   padding: 1em;
   font-size: 2em;
   color: black;
+}
+
+.txt_field select {
+  margin: 1em;
 }
 
 .submit-button {
