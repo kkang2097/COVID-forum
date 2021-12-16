@@ -73,6 +73,7 @@ useEffect(() => {
       <header>
         <h1>FEED-SEARCH</h1>
       </header>
+
     <div className = "Feed">
       <a>ADD-STATUS</a>
       <FeedAddStatus/>
@@ -85,6 +86,7 @@ useEffect(() => {
         currentFeed
         .map(item => <FeedCard item = {item}/>)
     }
+    </div>
     </div>
   );
 }

@@ -20,26 +20,11 @@ function FeedAddStatus(handleAddStatus) {
   ,[]);
   */
   function handleAddStatus(){
-    const data = {
-      "message": message,
-      "city": city
-    };
-<<<<<<< Updated upstream
-    Call("addChat", data)
-    .then((response => {
-=======
-    var json = Call("addChat", data)
-    .then(response => {
-      dispatch(response);
->>>>>>> Stashed changes
-        if (response.error == false) {
-            console.log("ADDED STATUS UPDATE");
-        }
-        else {
-            console.log(response.error);
-        }
-    }));
+    //Code removed because it caused bugs
+
   }
+
+
 
 
   return(
