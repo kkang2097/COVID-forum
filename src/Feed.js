@@ -67,19 +67,18 @@ useEffect(() => {
       <header>
         <h1>ADD-STATUS</h1>
       </header>
-        <header>
+      <header>
           <FeedAddStatus />
       </header>
       <header>
         <h1>FEED-SEARCH</h1>
       </header>
-      <header>
     <div className = "Feed">
       <a>ADD-STATUS</a>
       <FeedAddStatus/>
       <a>FEED-SEARCH</a>
         <FeedSearch updateStatus = {"hello"} handleSearch = {handleSearch} />
-      </header>
+
       <span className='Feed'></span>
       {
         //Show current Feed
