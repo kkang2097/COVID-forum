@@ -2,11 +2,12 @@
   background: #FDC830;
   background: linear-gradient(to right, #FDC830,#F37335); 
   border-radius: 20px;
-  width: 80%;
+  width: 90%;
   height: 25%;
   box-shadow: 10px 10px 5px #888888;
   padding-bottom: 2%;
   margin-bottom: 1%;
+  margin-left: 4%
 }
 
 .title{
@@ -33,4 +34,69 @@
 .text{
   margin-right: 20px;
   font-size: 20px;
+}
+
+.add-feed-status textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  font-size: 1.5em;
+}
+
+.add-feed-status input{
+  font-size: 1.5em;
+}
+
+.add-feed-status select {
+  font-size: 1.5em;
+}
+
+.feed-search input {
+  font-size: 1.5em;
+}
+
+.feed-search select {
+  font-size: 1.5em;
+}
+
+
+.search {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-size: 1em;
+}
+
+.search:hover {
+  background-color: #f1f1f1;
+}
+
+.search2 {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-size: 1em;
+}
+
+.search2:hover {
+  background-color: #f1f1f1;
 }
