@@ -1,5 +1,5 @@
 import React from 'react';
-import Call from './Call';
+import { Call } from './Call.js';
 
 function FeedAddStatus() {
 
@@ -17,7 +17,7 @@ function FeedAddStatus() {
     const city = document.getElementById("city");
     const state = document.getElementById("state");
 
-    data = {
+    const data = {
       "message": message,
       "city": city,
       "state": state

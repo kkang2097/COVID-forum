@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import FeedCard from './FeedCard';
 import FeedAddStatus from './FeedAddStatus';
 import FeedSearch from './FeedSearch';
-import Call from './Call';
+import { Call } from './Call.js';
 import './css/feed-luke.css';
 
 function Feed() {
