@@ -49,7 +49,9 @@ class Person:
         if vaccine:
             risk = risk * 0.3
 
-        self.riskScore = risk / 1.3
+        self.riskScore = int( risk / 1.3 )
+
+        print(self.riskScore)
 
 
     
