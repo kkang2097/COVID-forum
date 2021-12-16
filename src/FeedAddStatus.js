@@ -1,7 +1,11 @@
-import React from 'react';
+import {React, useState} from 'react';
 import { Call } from './Call.js';
 
+
 function FeedAddStatus() {
+
+  const [message, setMessage] = useState();
+  const [city, setCity] = useState();
 
   //On component initial load
   /*
@@ -13,18 +17,13 @@ function FeedAddStatus() {
   ,[]);
   */
   function handleAddStatus(){
-    const message = document.getElementById("message");
-    const city = document.getElementById("city");
-    const state = document.getElementById("state");
 
     const data = {
       "message": message,
-      "city": city,
-      "state": state
+      "city": city
     };
     Call("addChat", data)
     .then((response => {
-        dispatch(response);
         if (response.error == false) {
             console.log("ADDED STATUS UPDATE");
         }
@@ -36,11 +35,13 @@ function FeedAddStatus() {
 
   return(
     <div className = "add-feed-status">
-      <input type = "text" id = "message"
-      placeholder = "If you have COVID-19, share your experience!"/>
+      <input type = "text" id = "message" value = {message}
+      placeholder = "If you have COVID-19, share your experience!"
+      onChange = {e => {setMessage(e.target.value)} }/>
 
-      <input type="text" id="city" placeholder="City (Name)"/>
-      <input type="text" id="state" placeholder="State (Name)"/>
+      <input type="text" id="city" value = {city}
+      placeholder="City (Name)"
+      onChange = {e => (setCity(e.target.value))}/>
       <button onClick = {e => {
         handleAddStatus()
       } }>Add Status</button>
