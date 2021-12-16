@@ -22,15 +22,15 @@ function FeedAddStatus() {
       "message": message,
       "city": city
     };
-    Call("addChat", data)
-    .then((response => {
+    var json = Call("addChat", data)
+    .then(response => {
         if (response.error == false) {
             console.log("ADDED STATUS UPDATE");
         }
         else {
             console.log(response.error);
         }
-    }));
+    });
   }
 
   return(
