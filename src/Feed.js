@@ -62,12 +62,20 @@ useEffect(() => {
 
 //Rendering portion
   return(
-    <div className = "Feed">
-      <a>ADD-STATUS</a>
-      <FeedAddStatus />
-      <a>FEED-SEARCH</a>
+    <div className = "HEAD">
+      <header>
+        <h1>ADD-STATUS</h1>
+      </header>
+        <header>
+          <FeedAddStatus />
+      </header>
+      <header>
+        <h1>FEED-SEARCH</h1>
+      </header>
+      <header>
         <FeedSearch updateStatus = {"hello"} handleSearch = {handleSearch} />
-      <a>FEED</a>
+      </header>
+      <span className='Feed'></span>
       {
         //Show current Feed
         currentFeed
